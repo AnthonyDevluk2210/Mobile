@@ -31,3 +31,4 @@
                 - Linguagem: JavaScript
                 - Não Gera APK nativos
                 (runTime)
+                
