@@ -11,7 +11,8 @@
         - Dispositivos Móveis
         - Tipos de Desenvolvimento
             - Nativo:
-                - Android - IDE: Android Studio;
+                - Android 
+                - IDE: Android Studio;
                 - Compilador: Android SDK
                 - Linguagens Nativas: Kotlin / Java
                 - Plataformas: Win/Mac/Linux
@@ -29,6 +30,5 @@
                 - Gera APK nativos
             -Ionic
                 - Linguagem: JavaScript
-                - Não Gera APK nativos
-                (runTime)
+                - Não Gera APK nativos(runTime)
                 
