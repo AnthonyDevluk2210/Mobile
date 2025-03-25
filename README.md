@@ -30,5 +30,5 @@
                 - Gera APK nativos
             -Ionic
                 - Linguagem: JavaScript
-                - Não Gera APK nativos(runTime)
+                - Não Gera APK nativos(RunTime)
                 
