@@ -1,66 +1,167 @@
-// Terminando ainda !!!!!!
+// tela de perfil com flutter
 
 import 'package:flutter/material.dart';
 
-void main(){
-  runApp(MaterialApp(debugShowCheckedModeBanner: false,home: MyApp()));
+void main() {
+  runApp(MaterialApp(debugShowCheckedModeBanner: false, home: MyApp()));
 }
 
-
-//criar a Janela Principal
-class Myapp extends StatelessWidget {
-  //criar lista de itens
-  List<String> _imagens = [
-    "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0",
-  "https://images.unsplash.com/photo-1521747116042-5a810fda9664",
-"https://images.unsplash.com/photo-1504384308090-c894fdcc538d",
-"https://images.unsplash.com/photo-1518837695005-2083093ee35b",
-"https://images.unsplash.com/photo-1501594907352-04cda38ebc29",
-"https://images.unsplash.com/photo-1519681393784-d120267933ba",
-"https://images.unsplash.com/photo-1531259683007-016a7b628fc3",
-"https://images.unsplash.com/photo-1506619216599-9d16d0903dfd",
-"https://images.unsplash.com/photo-1494172961521-33799ddd43a5",
-"https://images.unsplash.com/photo-1517245386807-bb43f82c33c4",
-  ];
-  //construtor de Widget
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context){
     return Scaffold(
-      appBar: AppBar(title: Text("Galeria de Imagens"),centerTitle: true,),//barra superior do App
-      body:Padding(
+      // tela de perfil usuário
+      appBar: AppBar(title: Text("Perfil do Usuário"),
+      actions: [
+        IconButton(
+          icon: Icon(Icons.settings),
+          onPressed: () => print("Configurações Pressionado"),
+        ),
+        IconButton(
+          onPressed: () => print("Sair Pressionado"), 
+          icon: Icon(Icons.exit_to_app))
+      ],
+      backgroundColor: Colors.grey,
+      
+      ),
+      // imagem do usuario e informações do perfil
+      body: Padding(
         padding: EdgeInsets.all(8),
-        child:Column(
+        child: Column(
           children: [
-           
-          Expanded(
-            child: GridView.builder(//construir uma grid apartir de uma lista
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3, //quantidade de imagens por linha
-                crossAxisSpacing: 8, //espaçamento entre colunas
-                mainAxisSpacing: 8),//espaçamento entre linha
-              itemCount: _imagens.length,  
-              itemBuilder: (context,index) => 
-                GestureDetector(
-                  onTap: () => _mostrarImagem(context,_imagens[index]), //Exibe a Imagem em tela cheia ao tocar
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(5),
-                    child: Image.network(_imagens[index],fit:BoxFit.cover)),
-                )))
+            // informações do perfil
+            Container(
+              width: double.infinity,
+              color: Colors.grey,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ClipOval(
+                    child: Image.network(
+                      "https://static.wikia.nocookie.net/ducktales/images/1/1e/Pato_Donald_2017.png/revision/latest?cb=20180724043359&path-prefix=pt-br",
+                      width: 200,
+                      height: 200,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  Text("Nome: Pato donald", style: TextStyle(fontSize: 20)),
+                  Text("dataNascimento: 09/06/1934", style: TextStyle(fontSize: 20)),
+                ],
+              ),
+            ),
+            
+            // 3 container para exibir informações
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  margin: EdgeInsets.all(10),
+                  padding: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    color: Colors.blue,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Text("Menbros do clube: 40 ", style: TextStyle(fontSize: 20, color: Colors.white)),
+                ),
+                Container(
+                  margin: EdgeInsets.all(10),
+                  padding: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    color: Colors.blue,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Text("Amigos: 20", style: TextStyle(fontSize: 20, color: Colors.white)),
+                ),
+                Container(
+                  margin: EdgeInsets.all(10),
+                  padding: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    color: Colors.blue,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Text("Fotos: 10", style: TextStyle(fontSize: 20, color: Colors.white)),
+                ),
+              ],
+            ),
+            //lista de 5 itens
+            ListView(
+              shrinkWrap: true,
+              children: [
+                ListTile(
+                  leading: Icon(Icons.star),
+                  title: Text("Item 1"),
+                  subtitle: Text("Descrição do Item 1"),
+                  trailing: Icon(Icons.arrow_forward),
+                ),
+                ListTile(
+                  leading: Icon(Icons.star),
+                  title: Text("Item 2"),
+                  subtitle: Text("Descrição do Item 2"),
+                  trailing: Icon(Icons.arrow_forward),
+                ),
+                ListTile(
+                  leading: Icon(Icons.star),
+                  title: Text("Item 3"),
+                  subtitle: Text("Descrição do Item 3"),
+                  trailing: Icon(Icons.arrow_forward),
+                ),
+                ListTile(
+                  leading: Icon(Icons.star),
+                  title: Text("Item 4"),
+                  subtitle: Text("Descrição do Item 4"),
+                  trailing: Icon(Icons.arrow_forward),
+                ),
+                ListTile(
+                  leading: Icon(Icons.star),
+                  title: Text("Item 5"),
+                  subtitle: Text("Descrição do Item 5"),
+                  trailing: Icon(Icons.arrow_forward),
+                ),
+              ],
+            ),
+            //lista com icones de redes sociais
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              
+              children: [
+                IconButton(
+                  onPressed: () => print("Facebook Pressionado"),
+                  icon: Icon(Icons.facebook),
+                  iconSize: 50,
+                ),
+                IconButton(
+                  onPressed: () => print("Instagram Pressionado"),
+                  icon: Icon(Icons.camera_alt),
+                  iconSize: 50,
+                ),
+                IconButton(
+                  onPressed: () => print("Twitter Pressionado"),
+                  icon: Icon(Icons.alternate_email),
+                  iconSize: 50,
+                ),
+              ],
+            ),
           ],
-        ))
+        ),
+      ) ,
+      //bottonNavigationBar com 3 icones
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: "Home",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search),
+            label: "Buscar",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.add),
+            label: "Adicionar",
+          ),
+        ],
+      ),
     );
   }
 }
-
-//função para mostrar a imagem em tela cheia
-void _mostrarImagem(BuildContext context, String imagem) {
-  showDialog(
-    context: context, 
-    builder: (context)=>Dialog(
-      child: Image.network(imagem),
-    ));
-}
-
-
-
-// Atividade !!!!
