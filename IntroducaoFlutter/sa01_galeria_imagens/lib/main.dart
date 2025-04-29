@@ -21,6 +21,8 @@ class MyApp extends StatelessWidget{
 "https://images.unsplash.com/photo-1494172961521-33799ddd43a5",
 "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4",
   ];
+
+  MyApp({super.key});
   //construtor de Widget
   @override
   Widget build(BuildContext context){
