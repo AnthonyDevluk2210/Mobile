@@ -31,4 +31,11 @@
             -Ionic
                 - Linguagem: JavaScript
                 - Não Gera APK nativos(RunTime)
-                
+
+## Preparação da Máquina para Flutter
+-Instalar o Java
+    -Terminar: Java --version -> jdk-21java
+-Preparar o Ambiente Andorid( platdorms - emulator - commandLine)
+    -Terminal: sdkmanager --list , adb --version, emulator --version  
+- Preparar o Flutter ( src/flutter) 3.32.8    
+    -Terminar: flutter --version          
