@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:json_web_service_clima/controllers/clima_controller.dart';
 import 'package:json_web_service_clima/models/clima_model.dart';
 
