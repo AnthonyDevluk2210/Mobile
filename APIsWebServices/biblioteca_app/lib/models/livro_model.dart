@@ -1,9 +1,11 @@
 class LivroModel {
+  //atributos
   final String? id;
   final String titulo;
   final String autor;
   final bool disponivel;
 
+//cosntrutor
   LivroModel({
     this.id,
     required this.titulo,
@@ -18,6 +20,7 @@ class LivroModel {
     disponivel: json["disponivel"] == true ? true : false,
   );
 
+  //toJson OBJ => Map
   Map<String, dynamic> toJson() => {
     "id": id,
     "titulo": titulo,

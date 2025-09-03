@@ -8,7 +8,7 @@ class ApiService {
   // permite uma maior segurança na solicitação de requisições http
   // static -> métodos e atributos de classe
 
-  static const String _baseUrl = "http://10.109.197.26:3016";
+  static const String _baseUrl = "http://10.109.197.40:3016";
 
   //métodos da Classe
 
