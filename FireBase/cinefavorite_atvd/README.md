@@ -65,6 +65,16 @@ classDiagram
 
 ```
 
+2. ### Diagrama de Uso
+
+
+
+3. ### Diagrama de Fluxo
+
+
+
 ## Prototipagem
 
-## Codificação
+- Colocar o link do Figma
+
+## Codificação 
