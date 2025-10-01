@@ -29,7 +29,11 @@ class TmdbService {
       // transformar data (string) em List
       return List<Map<String, dynamic>>.from(data["results"]);
     } else {
+      //caso contrario criar uma exception
       throw Exception("Falha ao Carregar Filmes da API");
     }
   }
+
+  //método para busca filme pelo ID
+
 }

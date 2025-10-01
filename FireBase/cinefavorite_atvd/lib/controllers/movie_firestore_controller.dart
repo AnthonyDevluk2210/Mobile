@@ -49,7 +49,7 @@ class MovieFirestoreController {
     final movie = Movie(
       id: movieData["id"], 
       title: movieData["title"], 
-      posterPath: movieData["poster_path"]);
+      posterPath: file.path.toString()); //corrigir para o endereço certo da imagem
     
     //adicionar o OBJ ao FireStore
     await _db.collection("users").doc(currentUser!.uid).collection("favorite_movies")
@@ -79,4 +79,6 @@ class MovieFirestoreController {
     await _db.collection("users").doc(currentUser!.uid).collection("favorite_movies")
     .doc(movieId.toString()).update({"rating":rating});
   }
+
+  Future<void> removeMovie(int id) async {}
 }

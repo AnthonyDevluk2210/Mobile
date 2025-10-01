@@ -1,4 +1,5 @@
 import 'package:cinefavorite_atvd/views/favorite_view.dart';
+import 'package:cinefavorite_atvd/views/login_view.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
